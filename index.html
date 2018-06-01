@@ -1,0 +1,94 @@
+<!doctype html>
+<HTML lang="en">
+    <HEAD>
+        <title>CCSF Cyber Security Club</title>
+        <meta charset="utf-8">
+        <meta name="description" content="CCSF CSC">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        
+		<!--NAVIGATION BAR-->		
+        <NAV class="navbar fixed-top navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">CCSF CSC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"> Mission Statement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"> About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </NAV>
+        
+		<!--BODY PADDING FOR NAVBAR-->
+        <style>
+            body {
+				padding-top: 60px;
+            }
+            @media (max-width: 979px) {
+				body {
+					padding-top: 0px;
+				}
+            }
+       
+	   </style>
+        <!--NAVBAR COLORING SCHEME-->
+        <link rel="stylesheet" type="text/css" href="./css/navbar.css">
+       
+	    <!--ANIMATE.CSS-->
+        <link rel="stylesheet" href="./css/animate.css">
+    </HEAD>
+    <BODY>
+        <h1 class="text-center" id="tooltip"></h1>
+        <script>
+            <!--Script for cycling tooltips, may extend JQuery to make it look neater-->
+            setInterval( //Interval of 10 seconds
+            	function() {
+            		$("#tooltip")[0].innerText = tooltips[Math.floor(Math.random() * tooltips.length)]; //Random tip
+            		$("#tooltip").addClass("animated zoomInDown").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', //add zoomIn animation and end vent listener
+            			function() { 
+            				$(this).removeClass('animated zoomInDown'); // remove classes to remove duplicates from being added
+            				setTimeout( //queue zoomOut animation of 6 seconds
+            					function() {
+            						$("#tooltip").addClass("animated zoomOutDown").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+            							function() {
+            								$(this).removeClass('animated zoomOutDown');
+            								$(this)[0].innerText = "";
+            							}
+            						)
+            					}
+            				, 6000);
+            			}
+            		);
+            	}
+            , 10000);
+            
+            //Will change into better tips later.
+            var tooltips = [
+            	"Wowee, this was hard",
+            	"This statement is !True",
+            	"Air conditioned environment - Do not open Windows!",
+            	"A Life? Cool! Where can I download one of those from?",
+            	"COFFEE.EXE Missing---Insert Cup and Press Any Key.",
+            	"If at first you don't succeed, call it version 1.0.",
+            	"It's not a bug; it's an undocumented feature.",
+            ];
+        </script>
+		
+		<!-- Bootstrap Libraries -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    </BODY>
+</HTML>
